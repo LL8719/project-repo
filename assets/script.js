@@ -1,5 +1,5 @@
 var jokesUrl = 'https://geek-jokes.sameerkumar.website/api?format=json';
-
+//Finds Joke
 function findJoke(joke) {
 	fetch(jokesUrl)
 		.then((response) => {
@@ -11,18 +11,14 @@ function findJoke(joke) {
 			motivate();
 		});
 }
-
+//Displays Joke
 function displayJoke(data) {
-	var newJoke = document.createElement('h1');
-	var jokeP = document.createTextNode(data.joke);
-	newJoke.appendChild(jokeP);
-	//class or ID where the joke will be input
-	var jokeDiv = document.querySelector('.joke');
-	document.body.insertBefore(newJoke, jokeDiv);
+	var newJoke = $('<h5>').text(data.joke);
+	$('.joke').append(newJoke);
 }
 
 var motivateUrl = 'https://api.goprogram.ai/inspiration';
-
+//Finds Motivational quote
 function motivate(quote) {
 	fetch(motivateUrl)
 		.then((response) => {
@@ -32,21 +28,26 @@ function motivate(quote) {
 			displayMotivate(data);
 		});
 }
-
+//Displays Motivational quote
 function displayMotivate(data) {
-	var newQuote = document.createElement('h1');
-	var quoteP = document.createTextNode(data.quote);
-	newQuote.appendChild(quoteP);
-	//class or ID where the Motivation will be input
-	var quoteDiv = document.querySelector('.random_quote');
-	document.body.insertBefore(newQuote, quoteDiv);
+	var newQuote = $('<h5>').text(data.quote);
+	$('.random_quote').append(newQuote);
 }
 
 //local storage to save both quotes if user clicks the thumbs up
 var likeHist = JSON.parse(localStorage.getItem('likeHistory')) || [];
 
-function thumbsUp() {
+function saveSelection() {
+	var joke = $('.joke').text();
+	var quote = $('.random_quote').text();
+	likeHist.push(joke);
+	likeHist.push(quote);
 	localStorage.setItem('likeHistory', JSON.stringify(likeHist));
 }
+// Save button
+$('.save_button').on('click', function (e) {
+	e.preventDefault();
+	saveSelection();
+});
 
 findJoke();
