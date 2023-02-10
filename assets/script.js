@@ -56,6 +56,23 @@ $('.save_button').on('click', function (e) {
 	makeButton();
 });
 
+//Modal
+var modal = $('#myModal');
+var span = document.getElementsByClassName('close')[0];
+var text = $('.copied-text');
+
+span.onclick = function () {
+	document.getElementById('myModal').style.display = 'none';
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+	if (event.target == modal) {
+		document.getElementById('myModal').style.display = 'none';
+		document.getElementById('myModal').style.display = 'block';
+	}
+};
+
 // Make button
 function makeButton() {
 	$('.search_history').empty();
@@ -63,11 +80,16 @@ function makeButton() {
 	var savedText = $('<button>').text(
 		$('.joke').text() + ' ' + $('.random_quote').text()
 	);
-	savedText.addClass('btn  btn-primary');
+	savedText.addClass('btn  btn-primary ');
 	savedText.attr('id', 'savedBtnText');
+	savedText.attr('title', 'Click to Copy');
 	$('.search_history').append(savedText);
+
 	savedText.on('click', (event) => {
 		event.preventDefault();
+		document.querySelector('.copied-text').innerHTML = '';
+		document.getElementById('myModal').style.display = 'block';
+
 		copyText();
 	});
 }
@@ -77,18 +99,15 @@ function copyText() {
 	var jokeMotiv = $('#savedBtnText').text();
 	var copyText = jokeMotiv;
 
+	text.append(jokeMotiv);
 	// Copy the text inside the text field
 	navigator.clipboard.writeText(copyText);
-
-	// Alert the copied text
-	alert('Copied the text: ' + copyText);
 }
 // Skip button
 $('.skip_button').on('click', function (event) {
 	event.preventDefault();
 	$('.joke').empty();
 	$('.random_quote').empty();
-
 	findJoke();
 });
 findJoke();
