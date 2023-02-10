@@ -60,14 +60,16 @@ $('.save_button').on('click', function (e) {
 var modal = $('#myModal');
 var span = document.getElementsByClassName('close')[0];
 var text = $('.copied-text');
+
 span.onclick = function () {
-	modal.style.display = 'none';
+	document.getElementById('myModal').style.display = 'none';
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
 	if (event.target == modal) {
-		modal.style.display = 'none';
+		document.getElementById('myModal').style.display = 'none';
+		document.getElementById('myModal').style.display = 'block';
 	}
 };
 
@@ -85,8 +87,7 @@ function makeButton() {
 
 	savedText.on('click', (event) => {
 		event.preventDefault();
-
-		// modal.style.display = 'block';
+		document.querySelector('.copied-text').innerHTML = '';
 		document.getElementById('myModal').style.display = 'block';
 
 		copyText();
@@ -97,14 +98,10 @@ function copyText() {
 	// Get the text field
 	var jokeMotiv = $('#savedBtnText').text();
 	var copyText = jokeMotiv;
+
 	text.append(jokeMotiv);
 	// Copy the text inside the text field
 	navigator.clipboard.writeText(copyText);
-
-	// Alert the copied text
-	// alert('Copied the text: ' + copyText);
-
-	// $('#savedBtnText').
 }
 // Skip button
 $('.skip_button').on('click', function (event) {
