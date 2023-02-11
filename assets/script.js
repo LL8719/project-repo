@@ -1,4 +1,5 @@
 var jokesUrl = 'https://geek-jokes.sameerkumar.website/api?format=json';
+
 //Finds Joke
 function findJoke(joke) {
 	fetch(jokesUrl)
@@ -11,6 +12,7 @@ function findJoke(joke) {
 			motivate();
 		});
 }
+
 //Displays Joke
 function displayJoke(data) {
 	var newJoke = $('<h5>').text(data.joke);
@@ -19,7 +21,7 @@ function displayJoke(data) {
 }
 
 var motivateUrl = 'https://api.goprogram.ai/inspiration';
-console.log(motivateUrl);
+
 //Finds Motivational quote
 function motivate(quote) {
 	fetch(motivateUrl)
@@ -27,10 +29,10 @@ function motivate(quote) {
 			return response.json();
 		})
 		.then((data) => {
-			console.log(data);
 			displayMotivate(data);
 		});
 }
+
 //Displays Motivational quote
 function displayMotivate(data) {
 	var newQuote = $('<h5>').text(data.quote);
@@ -69,7 +71,6 @@ span.onclick = function () {
 window.onclick = function (event) {
 	if (event.target == modal) {
 		document.getElementById('myModal').style.display = 'none';
-		document.getElementById('myModal').style.display = 'block';
 	}
 };
 
@@ -93,16 +94,18 @@ function makeButton() {
 		copyText();
 	});
 }
+
 //Copy text from button
 function copyText() {
 	// Get the text field
 	var jokeMotiv = $('#savedBtnText').text();
 	var copyText = jokeMotiv;
 
-	text.append(jokeMotiv);
+	text.append('Copied Text: ', jokeMotiv);
 	// Copy the text inside the text field
 	navigator.clipboard.writeText(copyText);
 }
+
 // Skip button
 $('.skip_button').on('click', function (event) {
 	event.preventDefault();
@@ -110,4 +113,5 @@ $('.skip_button').on('click', function (event) {
 	$('.random_quote').empty();
 	findJoke();
 });
+
 findJoke();
