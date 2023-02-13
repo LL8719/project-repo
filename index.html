@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/style.css">
+
 
     <title>Document</title>
 </head>
@@ -22,15 +22,19 @@
             <div class="row column-gap-5">
 
                 <div>
+                <header>
                     <h2>Random Joke</h2>
+                </header>
                 </div>
-                <div class="joke col rounded-3 border border-primary  mh-100" style=" height: 200px; ">
+                <div class="joke" style=" height: 200px; ">
                 </div>
 
                 <div>
+                <header>
                     <h2>Random Quote</h2>
+                </header>
                 </div>
-                <div class="random_quote rounded-3 col border border-primary mh-100" style=" height: 200px;"></div>
+                <div class="random_quote" style=" height: 200px;"></div>
             </div>
         </div>
 
@@ -47,10 +51,12 @@
             </div>
         </div>
 
-
     </main>
-    <div class="search_history text-center">Search History</div>
-
+    <div class="container search_history mt-5">
+        <h3>Search History</h3>
+        <div class="history_list">
+        </div>
+      </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
