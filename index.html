@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
+
+        <link rel="stylesheet" type="text/css" href="assets/style.css">
+
+
+
+
     <title>Document</title>
 </head>
 
@@ -19,17 +24,29 @@
         <div class="container  text-center ">
             <div class="row ">
                 <div>
+                <header>
                     <h2>Random Joke</h2>
+                </header>
                 </div>
+
+                <div class="joke" style=" height: 200px; ">
+
                 <div class="joke col-sm-3-align-items-center col-md-6 col-lg-12 rounded-3 border border-primary  mh-100"
                     style=" height: 200px; ">
+
                 </div>
 
                 <div>
+                <header>
                     <h2>Random Quote</h2>
+                </header>
                 </div>
+
+                <div class="random_quote" style=" height: 200px;"></div>
+
                 <div class="random_quote col-sm-12 col-md-12 col-lg-12 rounded-3 col border border-primary  mh-100"
                     style=" height: 200px;"></div>
+
             </div>
         </div>
 
@@ -45,6 +62,7 @@
                 </div>
             </div>
         </div>
+
 
         <div id="myModal" class="modal">
 
@@ -69,9 +87,13 @@
 
 
 
-    </main>
-    <div class="search_history text-center">Search History</div>
 
+    </main>
+    <div class="container search_history mt-5">
+        <h3>Search History</h3>
+        <div class="history_list">
+        </div>
+      </div>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
