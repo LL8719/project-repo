@@ -1,162 +1,185 @@
 
-   body {
-    background-color: #e9ecef;
-    font-family: Arial, sans-serif;
-   }
-   
-   .text-center {
-    text-align: center;
-   }
-   
-   .font-monospace {
-    font-family: monospace;
-   }
-   
-   .container{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-   }
+body {
+  background-color: #e9ecef;
+  font-family: Arial, sans-serif;
+ }
+ 
+ .text-center {
+  text-align: center;
+ }
+ 
+ .font-monospace {
+  font-family: monospace;
+ }
+ 
+ .container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+ }
 
 .container button{
-    margin: 1rem;
-    margin-top: 50px;
-    justify-content: center;
+  margin: 1rem;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+ .row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ }
+
+
+ header h1 {
+      background-color: lightgrey;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px  0 rgba(0,0,0,0.1);
+  }
+
+  header h2 {
+      background-color: #f2f2f2;
+      padding: 10px;
+      border-radius: 25px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-top: 30px;
+      background-color: #fff;
+       
+           
+  }
+
+  .col-sm-6 {
+    display: flex;
+    flex-flow: column;
     align-items: center;
 }
 
-   .row{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-   }
+.p-3 {margin: 0px 10rem;}
 
 
-   header h1 {
-        background-color: lightgrey;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 0 10px  0 rgba(0,0,0,0.1);
+  .joke, .random_quote {
+      background-color: #fff;
+      height: 200px;
+      width: 45%;
+      padding: 20px;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      border: 1 px solid #007bff;
+      display: inline-block;
+      min-width: 20rem;
+      margin-left: 3rem;
+  }
+
+
+
+  
+  .save_button, .skip_button {
+      margin-top: 20px;
+      width: 100px;
+      height: 50px;
+      font-size: 14px;
+      color: white;
+      background-color: blue;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 50px;
+      margin-right: 50px;
+  }
+
+  button#savedBtnText {
+    border-radius: 10px;
+    color: #fff;
+    background-color: blue;
+    padding: 5px;
+    margin: auto;
+}
+
+  .search_history {
+      width: 80%;
+      margin: 0 auto;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 10px  0 rgba(0,0,0,0.1);
+      margin-top:  2rem;
+      background-color: lightgrey;
     }
-
-    header h2 {
-        background-color: #f2f2f2;
-        padding: 10px;
-        border-radius: 25px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: bold;
-        margin-top: 30px;
-    }
-
-
-    .joke, .random_quote {
-        background-color: #fff;
-        height: 200px;
-        width: 45%;
-        padding: 20px;
-        text-align: center;
-        border-radius: 5px;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-        border: 1 px solid #007bff;
-        display: inline-block;
-    }
-
-
     
-    .save_button, .skip_button {
-        margin-top: 20px;
-        width: 100px;
-        height: 50px;
-        font-size: 14px;
-        color: white;
-        background-color: blue;
-        border-radius: 50px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 50px;
+    .history_list {
+      max-height: 500px;
+      overflow-y: auto;
     }
 
-    .search_history {
-        width: 80%;
-        margin: 0 auto;
-        padding: 1rem;
-        border-radius: 5px;
-        box-shadow: 0 0 10px  0 rgba(0,0,0,0.1);
-        margin-top:  2rem;
-        background-color: lightgrey;
+    @media only screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
       }
-      
-      .history_list {
-        max-height: 500px;
-        overflow-y: auto;
+    
+      .container {
+        width: 90%;
       }
-
-      @media only screen and (max-width: 600px) {
-        header h1 {
-          font-size: 1.5em;
-        }
-      
-        .container {
-          width: 90%;
-        }
-      
-        .row {
-          flex-direction: column;
-        }
+    
+      .row {
+        flex-direction: column;
       }
-      @media (max-width: 767px) {
-        .joke, .random_quote {
-          font-size: 14px;
-        }
+    }
+    @media (max-width: 767px) {
+      .joke, .random_quote {
+        font-size: 14px;
       }
+    }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  .modal-content p {
-    margin: 0rem 1rem 1rem;
-  }
-  /* Modal Content/Box */
-  .modal-content {
-    color:#fff;
-    background-color: #b42b3f;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    margin-left: 11rem;
-    border-radius: 15px;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content p {
+  margin: 0rem 1rem 1rem;
+}
+/* Modal Content/Box */
+.modal-content {
+  color:#fff;
+  background-color: #b42b3f;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  margin-left: 11rem;
+  border-radius: 15px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
 
